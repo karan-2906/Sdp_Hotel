@@ -1,3 +1,4 @@
+const { Long } = require('bson');
 const mongoose = require('mongoose');
 
 const Menumodel = mongoose.Schema({
@@ -6,7 +7,7 @@ const Menumodel = mongoose.Schema({
         required:true,
     },
     price:{
-        type:Int16Array,
+        type:String,
         required:true,
     },
     Desc:{

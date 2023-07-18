@@ -10,7 +10,7 @@ const Customermodel = mongoose.Schema({
         required:true
     },
     cat:{
-        type:Boolean,
+        type:String,
         required:true
     },
     contact_info:{

@@ -4,8 +4,8 @@ const router = Router()
 
 router.get('/',getALLcust);
 router.get('/:id',getCustById);
-router.get('/',addcust);
-router.get('/:id',updateCust);
-router.get('/:id',deleteCust);
+router.post('/',addcust);
+router.put('/:id',updateCust);
+router.delete('/:id',deleteCust);
 
 module.exports = router
