@@ -10,9 +10,9 @@ const app = express();
 connection();
 app.use(express.json());
 app.use('/api/v1/menus', menuroutes);
-app.use('/api/v1/customers',customerRoutes)
-app.use('/api/v1/orders',orderRoutes)
+app.use('/api/v1/customers', customerRoutes)
+app.use('/api/v1/orders', orderRoutes)
 app.use(errorHandler);
-app.listen(5000, () => {
-    console.log('Converted RAM to SERVER');
+app.listen(3001, () => {
+    console.log(`Converted RAM to SERVER ${3001}`);
 })

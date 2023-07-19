@@ -1,25 +1,14 @@
+// customerModel.js
+
 const mongoose = require('mongoose');
 
-const Customermodel = mongoose.Schema({
-    fname:{
-        type:String,
-        required:true,
-    },
-    lname:{
-        type:String,
-        required:true
-    },
-    cat:{
-        type:String,
-        required:true
-    },
-    contact_info:{
-        type:String,
-        required:true
-    },
-})
+const customerSchema = new mongoose.Schema({
+    fname: { type: String, required: true },
+    lname: { type: String, required: true },
+    cat: String,
+    contact_info: String,
+});
 
-Customermodel.static('getFullName', function(customer) { return `${customer.fname}+${customer.lname}` });
+const Custs = mongoose.model('Custs', customerSchema);
 
-const Customer = mongoose.model('Customer',Customermodel);
-module.exports= {Customer, Customermodel}
+module.exports = Custs;
