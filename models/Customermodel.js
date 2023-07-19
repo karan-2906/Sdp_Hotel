@@ -19,6 +19,7 @@ const Customermodel = mongoose.Schema({
     },
 })
 
-const Customer = mongoose.model('Customer',Customermodel);
+Customermodel.static('getFullName', function(customer) { return `${customer.fname}+${customer.lname}` });
 
-module.exports= Customer
+const Customer = mongoose.model('Customer',Customermodel);
+module.exports= {Customer, Customermodel}
