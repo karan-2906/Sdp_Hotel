@@ -21,7 +21,7 @@ const Ordermodel = mongoose.Schema({
     },
     amount: {
         type: Number,
-        required: true,
+        required: false,
 
     },
 })

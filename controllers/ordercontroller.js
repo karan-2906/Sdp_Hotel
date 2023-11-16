@@ -10,11 +10,12 @@ const getAllorder = asyncHandler(async (req, res) => {
 
 const addorder = asyncHandler(async (req, res) => {
     const { CustomerId, ItemId, quantity } = req.body
-    if (!CustomerId || !ItemId) {
+    if (!CustomerId || !ItemId || !quantity) {
         return res.status(422).json({ message: "Invalid data, Please Enter valid Data" })
     }
     const item = await Menu.findById(ItemId)
     console.log(item)
+
     if (!item) {
         return res.status(422).json({ message: "Item not Found" })
     }
@@ -22,7 +23,8 @@ const addorder = asyncHandler(async (req, res) => {
         CustomerId,
         ItemId,
         amount: item.price * quantity
-    })
+    }
+    )
     await neworder.save();
     if (neworder) {
         res.status(200).json({ message: "Order Created", order: neworder })

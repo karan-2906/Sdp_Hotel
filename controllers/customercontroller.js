@@ -61,7 +61,7 @@ const getCustById = async (req, res) => {
     }
 
     if (!custs) {
-        return res.status(404).json({ message: "No Customer Exit with such ID" })
+        return res.status(404).json({ message: "No Customer Exist with such ID" })
     } else {
         return res.status(200).json({ custs })
     }
